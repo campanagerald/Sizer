@@ -18,11 +18,12 @@ class SizerUtil {
       _height = constraints.maxWidth;
     }
 
-    //for mobile and tablet screen
-    if (_width < 600) {
+    if (_width <= 480) {
       _deviceType = DeviceType.Mobile;
-    } else {
+    } else if (_width <= 768) {
       _deviceType = DeviceType.Tablet;
+    } else if (_width <= 1200) {
+      _deviceType = DeviceType.Desktop;
     }
   }
 
@@ -52,4 +53,5 @@ class SizerUtil {
 enum DeviceType {
   Mobile,
   Tablet,
+  Desktop,
 }
